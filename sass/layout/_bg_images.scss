@@ -2,18 +2,10 @@
 
 /*//////////BACKGROUND DECORATIVE IMAGES\\\\\\\\\\\\\\*/
 .home {
-    .ribbon {
-        position: absolute;
-        top: 0;
-        left: -2%;
-        width: 110%;
-        z-index: -10;
-    }
-    .wave {
-        position: absolute;
-        bottom: 0;
-        left: -2%;
-        width: 110%;
-        z-index: -10;
-    }
+    background: url(../img/ribbon-1.svg) no-repeat 20% top;
+    background-size: 110%;
+}
+.page-about {
+    background: url(../img/ribbon-5.svg) no-repeat 20% top;
+    background-size: 110%;
 }

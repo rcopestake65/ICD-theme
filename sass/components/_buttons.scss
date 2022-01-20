@@ -21,3 +21,16 @@ button {
         }
     }
 }
+.nav-toggle:hover {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.donate-btn {
+    background-color: $clr-orange;
+    padding: 0.2rem 0.2rem !important;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}

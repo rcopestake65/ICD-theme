@@ -8,28 +8,50 @@
   list-style-type: none;
 }
 /* Desktop menu and logo*/
-.menu-container {
-  display: flex;
-  justify-content: space-between;
+// .menu-container {
+//   display: flex;
+//   justify-content: space-between;
+// }
+@include above(1100px) {
+  .menu-container {
+    margin-top: -3rem;
+  }
 }
+
 .menu-container > * {
   align-self: center;
   flex-grow: 1;
 }
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+}
+.logo-gif {
+  margin-top: -1.2rem;
 }
 
 //menu item li is relative to control the absolute position of the sub menu li
-.menu-item {
-  position: relative;
+@include above(1100px) {
+  .menu-item {
+    position: relative;
+    padding-right: 1rem;
+  }
+  .my-menu-item-5 {
+    padding-right: 0;
+  }
+  .menu .current_page_item > a {
+    color: $clr-orange;
+  }
+  .menu .current-menu-ancestor .current_page_item > a {
+    color: $clr-dark;
+  }
 }
+
 .menu-item:hover .sub-menu {
   display: block;
 }
@@ -41,42 +63,45 @@
   display: block;
   padding: 0 5px;
   color: $clr-dark;
-  font-weight: bold;
+  // font-weight: bold;
   text-decoration: none;
   &:hover {
     color: $clr-orange;
   }
 }
-
+.menu .my-menu-item-4 a:first-of-type {
+  padding-right: 0;
+}
 .sub-menu {
   //display: none;
   height: auto;
   overflow: hidden;
-  background: $clr-orange;
+  background: $clr-orange-dark;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: auto;
   border-radius: 3px;
   white-space: nowrap;
-  border-left: 2px solid $clr-orange-dark;
+  border-left: 2px solid $clr-orange;
+  z-index: 100;
   li {
     transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
   }
   li a {
     font-size: $fs-14;
     font-weight: normal;
     letter-spacing: 1px;
     color: $clr-white;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
+
     transition: all 0.2 ease;
     &:hover {
       color: $clr-dark;
     }
   }
   li:hover {
-    background-color: $clr-orange-dark;
+    background-color: $clr-orange;
   }
 }
 .toggle-btn-container {
@@ -91,7 +116,7 @@
   transition: all 0.5s ease;
 }
 .mobile-menu-container {
-  height: 0;
+  height: 0px;
   overflow: hidden;
   transition: all 0.5s linear;
 }
@@ -101,10 +126,16 @@
 }
 
 @include below(1100px) {
+  .current_page_item,
+  .current_page_ancestor,
+  .current-menu-item {
+    background-color: $clr-orange-dark;
+  }
+
   .mobile-menu {
     background-color: $clr-orange;
-    //padding: 1rem;
-    li.menu-item-has-children {
+    li.menu-item-has-children,
+    li.menu-item-169 /*final Contact item that has no children*/ {
       font-size: $fs-16;
       position: relative;
       li a {
@@ -119,6 +150,7 @@
           background-color: $clr-orange-dark;
         }
       }
+
       .open {
         display: flex;
         align-items: center;
@@ -160,5 +192,11 @@
   }
   .sub-menu {
     display: block;
+  }
+}
+@include below(700px) {
+  .nav-toggle {
+    top: 0;
+    right: 0;
   }
 }

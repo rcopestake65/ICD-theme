@@ -100,11 +100,12 @@ const contHeight = mobileSubMenusContainer.forEach(function (i) {
 openBtns.forEach(function (btn) {
   //reset the overall menu container ".mobile-menu-container"
   const linksHeight = menu.getBoundingClientRect().height;
-  mobileMenuContainer.style.height = `${linksHeight + 20}px`;
+
   //click it boyo
   btn.addEventListener("click", function (e) {
     //get the sub menu next to the btn clicked
     const clickedMenu = e.currentTarget.nextSibling;
+    //get the open and close font awesome icons
     const clickedOpenIcon = e.currentTarget.children[0];
     const clickedCloseIcon = e.currentTarget.children[1];
     //get the height of the ul.mobile-sub-menu
@@ -132,9 +133,12 @@ openBtns.forEach(function (btn) {
       clickedCloseIcon.classList.remove("hide");
     } else {
       clickedMenu.style.height = "0px";
-      mobileMenuContainer.style.height = `${linksHeight - clickedMenuHeight}px`;
+      mobileMenuContainer.style.height = `${linksHeight}px`;
       clickedOpenIcon.classList.remove("hide");
       clickedCloseIcon.classList.add("hide");
     }
   });
 });
+//Date in footer
+const date = document.getElementById("date");
+date.innerHTML = new Date().getFullYear();

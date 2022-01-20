@@ -6,3 +6,36 @@
 .circles {
     border-radius: 50%;
 }
+
+/*padding & margin*/
+
+.pt3 {
+    padding-top: 3rem !important;
+}
+
+/*clear out legay gutenberg cols in homepage*/
+.wp-block-columns {
+    display: none;
+}
+
+/*This comes from ACF https://www.advancedcustomfields.com/resources/oembed/ */
+.video {
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border: 10px solid hsl(29, 100%, 58%);
+    border-radius: 8px;
+}
+
+.video iframe,
+.video object,
+.video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
