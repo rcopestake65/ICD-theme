@@ -5,6 +5,7 @@
 p {
   padding-bottom: 1rem;
 }
+
 a {
   text-decoration: none;
   transition: 300ms;
@@ -13,12 +14,18 @@ a {
 // a:hover {
 //   color: $clr-red;
 // }
-.main-content p a {
+.main-content a {
   color: #333333;
   transition: all 0.3s linear;
-  border-bottom: 1px solid $clr-orange-dark;
+  border-bottom: 1px solid $clr-orange-transparent;
   &:hover {
     background-color: $clr-orange-transparent;
+  }
+}
+.main-content .pullout a {
+  border-bottom: 1px solid $clr-white;
+  &:hover {
+    background-color: $clr-white-transparent;
   }
 }
 ul {
@@ -40,44 +47,47 @@ h6 {
 h2.handwritten {
   font-family: $font-handwritten;
   font-size: $fs-48;
+  @include below(550px) {
+    font-size: $fs-32;
+  }
 }
 h3 {
   font-weight: bold;
 }
-/*gradient text*/
+.pullout h4 {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+/*gradient text & blockquotes*/
 
 .opening-quote {
   background-image: linear-gradient(90deg, #fbb308, #ef2e21);
   background-clip: text;
   -webkit-background-clip: text;
-  color: transparent;
-  font-size: $fs-24;
+  -webkit-text-fill-color: transparent;
+  font-size: $fs-22;
   text-align: right;
   font-weight: bold;
   padding: 0 0 1rem 0;
   @include below(1100px) {
     font-size: $fs-20;
   }
-  @include below(600px) {
-    justify-self: center;
-    width: 100%;
+  @include below(800px) {
     text-align: center;
   }
 }
 .main-content blockquote {
-  background-image: linear-gradient(90deg, #fbb308, #ef2e21);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: $fs-20;
+  font-size: $fs-18;
   font-weight: bold;
-  max-width: 40%;
   @include below(800px) {
     max-width: 100%;
     font-size: $fs-16;
   }
 }
-/*opening paragraph and quote*/
+.pullout blockquote {
+  color: $clr-white;
+}
+/*opening paragraph and quote grid*/
 .text-quote {
   display: grid;
   grid-template-columns: 1fr 1fr;

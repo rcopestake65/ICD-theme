@@ -12,7 +12,15 @@
 .pt3 {
     padding-top: 3rem !important;
 }
-
+.mt1 {
+    margin-top: 1rem;
+}
+.mt2 {
+    margin-top: 2rem;
+}
+.mt3 {
+    margin-top: 3rem;
+}
 /*clear out legay gutenberg cols in homepage*/
 .wp-block-columns {
     display: none;
@@ -26,8 +34,7 @@
     max-width: 100%;
     height: auto;
     margin-bottom: 1rem;
-    border: 10px solid hsl(29, 100%, 58%);
-    border-radius: 8px;
+    border-radius: 18px;
 }
 
 .video iframe,

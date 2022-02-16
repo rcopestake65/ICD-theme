@@ -11,7 +11,16 @@
                 <div class="footer-text">&copy <span id="date"></span> - icandance | All rights reserved.<br />
                     Charity Reg. Number : 1137695<br />
                     Site by <a href="https://www.redink.co.uk/">Red Ink</a></div>
+                <div class="footer-address">
+                    <a href="mailto:info@icandance.org.uk">info@icandance.org.uk</a> | 020 8444 1707<br />
+
+                    Green Man Community Centre<br />
+                    Strawberry Vale<br />
+                    London N2 9BA<br />
+                    <a class="donate-btn" href="#">Donate</a>
+                </div>
                 <div class="social">
+
                     <a href="https://www.facebook.com/icandanceuk/"><i class="fab fa-facebook"></i></a>
                     <a href="https://www.instagram.com/icandanceuk/"><i class="fab fa-instagram"></i></a>
                     <a href="https://twitter.com/icandanceuk"><i class="fab fa-twitter"></i></a>

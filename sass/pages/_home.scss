@@ -6,6 +6,7 @@
     font-size: $fs-22;
     @include below(800px) {
         font-size: $fs-16;
+        font-weight: bold;
     }
 }
 /*opening paragraph and quote*/
@@ -15,30 +16,31 @@
     @include below(600px) {
         grid-template-columns: 1fr;
     }
-    p {
-        background-color: $clr-white-transparent;
-        padding: 10px;
-        border-radius: 5px;
-        height: fit-content;
-        @include below(500px) {
-            padding: 0;
-        }
-    }
-    img {
-        max-width: 80%;
-        justify-self: end;
-        @include below(800px) {
-            max-width: 100%;
-        }
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         @include below(600px) {
             max-width: 80%;
-            justify-self: center;
+            justify-self: auto;
             padding: 1rem 0;
         }
     }
+    div > img {
+        max-width: 80%;
+
+        @include below(800px) {
+            max-width: 100%;
+        }
+    }
+    figcaption {
+        justify-self: end;
+        text-align: right;
+        font-size: $fs-14;
+    }
 }
 
-.circles {
+.circles-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

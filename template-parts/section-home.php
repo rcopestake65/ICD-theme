@@ -8,11 +8,16 @@
 <!--ACF-->
 <div class="intro">
     <p><?php the_field('intro'); ?></p>
-    <?php if( get_field('quote') ): ?>
-    <img class="quote" src="<?php the_field('quote'); ?>" />
-    <?php endif; ?>
+
+    <div>
+        <?php if( get_field('quote') ): ?>
+        <img class="quote" src="<?php the_field('quote'); ?>" />
+        <figcaption><?php the_field('caption'); ?></figcaption>
+        <?php endif; ?>
+    </div>
+
 </div>
-<div class="circles">
+<div class="circles-container">
     <?php if( get_field('image_one') ): ?>
     <img class="circle-1 circles" src="<?php the_field('image_one'); ?>" />
     <?php endif; ?>

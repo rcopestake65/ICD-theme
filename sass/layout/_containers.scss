@@ -18,6 +18,9 @@
     max-width: 80rem;
     margin: 0 auto;
     padding: 0 2rem;
+    @include below(600px) {
+        padding: 0 0.5rem;
+    }
 }
 .main-content {
     min-height: calc(100vh - 70px);
@@ -25,9 +28,10 @@
     margin: 0 auto;
     padding: 2rem;
     @include below(600px) {
-        padding: 0 0.5rem;
+        padding: 1rem 0.5rem;
     }
 }
+
 .footer-container {
     height: 100px;
 }
@@ -42,31 +46,11 @@
     justify-content: space-between;
     font-size: $fs-14;
     @include below(800px) {
+        flex-direction: column;
         .social {
             display: block;
             padding-left: 0;
             font-size: $fs-20;
-        }
-    }
-}
-
-/*50:50 opening paragraph and gradient text quote*/
-.text-img {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-bottom: 1rem;
-    @include below(600px) {
-        grid-template-columns: 1fr;
-    }
-    div + div {
-        max-width: 70%;
-        justify-self: end;
-        align-self: start;
-        @include below(1100px) {
-            max-width: 90%;
-        }
-        @include below(600px) {
-            justify-self: center;
         }
     }
 }

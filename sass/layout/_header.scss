@@ -4,10 +4,11 @@
 */
 .pre-nav {
     display: grid;
-    grid-template-columns: 30% 1fr;
-    padding-top: 1rem;
-    @include below(800px) {
-        grid-template-columns: 1fr;
+    grid-template-columns: 40% 1fr;
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    @include below(450px) {
+        grid-template-columns: 65% 55%;
     }
     .social {
         text-align: right;
@@ -18,31 +19,37 @@
             text-align: left;
         }
     }
-    @include below(800px) {
+    @include below(550px) {
+        .social {
+            padding-left: 0;
+            // max-width: 50%; /*I have no idea why this is needed - but without there is side scrolling on small screens*/
+        }
+        .social-icon {
+            display: none;
+        }
+    }
+    @include below(345px) {
         .social {
             display: none;
         }
     }
     .social a:not(:last-of-type) {
-        padding-right: 10px;
+        margin-right: 10px;
     }
     .social > * {
         color: $clr-orange;
     }
 
-    .social a:nth-of-type(1):hover {
+    .social a:nth-of-type(2):hover {
         color: #4372b8;
     }
-    .social a:nth-of-type(2):hover {
-        color: $clr-red;
-    }
     .social a:nth-of-type(3):hover {
-        color: #5ea9dd;
+        color: $clr-red;
     }
     .social a:nth-of-type(4):hover {
-        color: $clr-red;
+        color: #5ea9dd;
     }
     .social a:nth-of-type(5):hover {
-        color: $clr-orange-dark;
+        color: $clr-red;
     }
 }
