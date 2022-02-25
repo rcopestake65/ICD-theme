@@ -2,29 +2,10 @@
 @use "../base" as *;
 /*////////////////CHILDREN PAGE \\\\\\\\\\\\\\\*/
 
-.columns {
-    display: grid;
-    grid-template-columns: 60% 1fr;
-    gap: 2rem;
-    @include below(600px) {
-        grid-template-columns: 1fr;
-    }
-}
-
 .columns p:first-of-type {
     font-size: $fs-18;
     font-weight: bold;
     @include below(800px) {
         font-size: $fs-16;
     }
-}
-
-/*IMAGE GRID*/
-.image-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.image-item-1 {
-    grid-column: 1 / 3;
-    grid-row: 1 / 3;
 }

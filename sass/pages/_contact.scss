@@ -1,15 +1,9 @@
 @use "../abstracts/variables" as *;
 @use "../base" as *;
 /*////////////////CONTACT PAGE \\\\\\\\\\\\\\\*/
-
 .form-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
-    margin-top: 2rem;
-    @include below(800px) {
-        grid-template-columns: 1fr;
-        padding: 1rem;
+    sup {
+        color: $clr-orange;
     }
 }
 .thanks-message {

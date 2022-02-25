@@ -1,17 +1,18 @@
 <?php if(have_posts()): while(have_posts()): the_post();?>
 
 <?php the_content();?>
-<!-- <div class="ribbon">
-    <img src="<?php bloginfo('template_url') ?>/img/ribbon-1.svg">
-</div> -->
 
-<!--ACF-->
-<div class="intro">
-    <p><?php the_field('intro'); ?></p>
+<!--ACF CONTENT-->
+
+<div class="two-column-container intro">
+    <div>
+        <?php the_field('intro'); ?>
+    </div>
+
 
     <div>
         <?php if( get_field('quote') ): ?>
-        <img class="quote" src="<?php the_field('quote'); ?>" />
+        <img src="<?php the_field('quote'); ?>" />
         <figcaption><?php the_field('caption'); ?></figcaption>
         <?php endif; ?>
     </div>

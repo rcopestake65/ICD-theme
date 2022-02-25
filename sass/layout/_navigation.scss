@@ -14,7 +14,7 @@
 // }
 @include above(1100px) {
   .menu-container {
-    margin-top: -3rem;
+    margin-top: -2rem;
   }
 }
 
@@ -63,7 +63,7 @@
   display: block;
   padding: 0 5px;
   color: $clr-dark;
-  // font-weight: bold;
+  font-weight: bold;
   text-decoration: none;
   &:hover {
     color: $clr-orange;

@@ -149,14 +149,17 @@ date.innerHTML = new Date().getFullYear();
 const form = document.getElementById("contactForm");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
+const phone = document.getElementById("phone");
 const message = document.getElementById("body");
 //get values from inputs
 const nameValue = name.value.trim();
 const emailValue = email.value.trim();
 const messageValue = message.value.trim();
+const phoneValue = phone.value.trim();
 
 let nameField;
 let emailField;
+let phoneField;
 let messageField;
 
 form.addEventListener("submit", (e) => {
@@ -166,14 +169,16 @@ form.addEventListener("submit", (e) => {
 });
 
 function sendForm() {
-  if (nameField && emailField && messageField) {
+  if (nameField && emailField && phoneField && messageField) {
     //AJAX ZAPIER
     var name = $("#name").val();
     var email = $("#email").val();
+    var phone = $("#phone").val();
     var body = $("#body").val();
     var data = {
       email: email,
       message: body,
+      phone: phone,
       contact: name,
     };
 
@@ -193,6 +198,7 @@ function checkInputs() {
   //get values from inputs
   const nameValue = name.value.trim();
   const emailValue = email.value.trim();
+  const phoneValue = phone.value.trim();
   const messageValue = message.value.trim();
 
   //is the field empty
@@ -212,6 +218,13 @@ function checkInputs() {
   } else {
     setSuccessFor(email);
     emailField = true;
+  }
+  if (phoneValue === "") {
+    setErrorFor(phone, "Please add your phone number");
+  } else {
+    //add success class
+    setSuccessFor(phone);
+    phoneField = true;
   }
 
   if (messageValue === "") {

@@ -17,9 +17,9 @@ a {
 .main-content a {
   color: #333333;
   transition: all 0.3s linear;
-  border-bottom: 1px solid $clr-orange-transparent;
+  border-bottom: 1px solid $clr-orange;
   &:hover {
-    background-color: $clr-orange-transparent;
+    background-color: $clr-orange;
   }
 }
 .main-content .pullout a {
@@ -60,15 +60,20 @@ h3 {
 }
 /*gradient text & blockquotes*/
 
-.opening-quote {
+.quote {
   background-image: linear-gradient(90deg, #fbb308, #ef2e21);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: $fs-22;
-  text-align: right;
   font-weight: bold;
   padding: 0 0 1rem 0;
+  p {
+    max-width: 75%;
+    @include below(800px) {
+      max-width: 100%;
+    }
+  }
   @include below(1100px) {
     font-size: $fs-20;
   }

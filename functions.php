@@ -5,6 +5,7 @@ function load_css()
     wp_register_style('style', get_template_directory_uri() . '/css/style.css', array(), false, 'all');
     wp_enqueue_style('style');
     wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.2.0/css/all.css' );
+    wp_enqueue_style('open-props', 'https://unpkg.com/open-props');
 }
 
 add_action('wp_enqueue_scripts', 'load_css');

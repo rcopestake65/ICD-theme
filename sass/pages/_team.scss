@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////TEAM PAGE \\\\\\\\\\\\\\\*/
+.team-item {
+    background-color: $clr-orange;
+    box-shadow: var(--shadow-2);
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+    h4 {
+        width: 100%;
+        background-color: $clr-white;
+        font-size: $fs-20;
+        color: $clr-dark;
+        font-weight: bold;
+        text-align: center;
+    }
+    h5 {
+        width: 100%;
+        background-color: $clr-yellow;
+        font-size: $fs-16;
+        color: $clr-dark;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 3px;
+    }
+    p {
+        padding: 1rem;
+    }
+}

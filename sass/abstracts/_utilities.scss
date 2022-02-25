@@ -26,15 +26,13 @@
     display: none;
 }
 
-/*This comes from ACF https://www.advancedcustomfields.com/resources/oembed/ */
+/*This comes from  https://avexdesigns.com/blog/responsive-youtube-embed */
 .video {
     position: relative;
     padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
     overflow: hidden;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 18px;
 }
 
 .video iframe,

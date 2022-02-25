@@ -4,7 +4,7 @@
 .home {
     background: url(../img/ribbon-1.svg) no-repeat 20% top;
     background-size: 110%;
-    @include below(500px) {
+    @include below(800px) {
         background: none;
     }
 }
@@ -12,7 +12,14 @@
 .page-about {
     background: url(../img/ribbon-5.svg) no-repeat 20% top;
     background-size: 110%;
-    @include below(500px) {
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-children-young-people {
+    background: url(../img/ribbon-4.svg) no-repeat -10% 100px;
+    background-size: 50%;
+    @include below(800px) {
         background: none;
     }
 }
