@@ -7,8 +7,8 @@
 <h3><?php the_field('intro'); ?></h3>
 
 <div class="form-container">
-
-    <div class="form-item">
+    <?php echo do_shortcode( '[wpforms id="554" title="false"]' ); ?>
+    <!-- <div class="form-item">
 
         <form id="contactForm" action="#" method="post">
             <div class="form-control">
@@ -48,7 +48,7 @@
             <p>We'll get back to you shortly</p>
             <img src="../img" alt="">
         </div>
-    </div>
+    </div> -->
     <div class="address mt1">
 
         <h3 class="mt1">Our venues for weekly sessions are in Hampstead:</h3>

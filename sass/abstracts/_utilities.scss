@@ -1,14 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////UTILITIES \\\\\\\\\\\\\\\*/
+
 /*image hover effect*/
 
 .hide {
     display: none !important;
+}
+.small-screen-hide {
+    @include below(800px) {
+        display: none !important;
+    }
+}
+.small-screen-only {
+    display: none;
+    @include below(800px) {
+        display: block;
+    }
 }
 .circles {
     border-radius: 50%;
 }
 
 /*padding & margin*/
-
+.pt2 {
+    padding-top: 2rem;
+}
 .pt3 {
     padding-top: 3rem !important;
 }

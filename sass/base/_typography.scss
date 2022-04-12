@@ -4,6 +4,7 @@
 */
 p {
   padding-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 a {
@@ -18,8 +19,10 @@ a {
   color: #333333;
   transition: all 0.3s linear;
   border-bottom: 1px solid $clr-orange;
+  padding: 0 2px;
   &:hover {
     background-color: $clr-orange;
+    color: $clr-white;
   }
 }
 .main-content .pullout a {
@@ -51,6 +54,17 @@ h2.handwritten {
     font-size: $fs-32;
   }
 }
+h3.handwritten {
+  font-family: $font-handwritten;
+  font-size: $fs-32;
+}
+h4.handwritten {
+  font-family: $font-handwritten;
+  font-size: $fs-32;
+  @include below(550px) {
+    font-size: $fs-24;
+  }
+}
 h3 {
   font-weight: bold;
 }
@@ -61,15 +75,22 @@ h3 {
 /*gradient text & blockquotes*/
 
 .quote {
-  background-image: linear-gradient(90deg, #fbb308, #ef2e21);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: $fs-22;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  height: fit-content;
+  background-color: #721e08;
+  padding: 2rem 1rem;
+  color: $clr-orange;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
   font-weight: bold;
-  padding: 0 0 1rem 0;
+  outline: 8px solid $clr-orange;
+  // padding: 0 0 1rem 0;
   p {
-    max-width: 75%;
+    // max-width: 75%;
+    font-size: $fs-24;
     @include below(800px) {
       max-width: 100%;
     }

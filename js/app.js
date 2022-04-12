@@ -146,114 +146,119 @@ date.innerHTML = new Date().getFullYear();
 //***************************************************/
 //CONTACT FORM
 //************************************************* */
-const form = document.getElementById("contactForm");
-const name = document.getElementById("name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const message = document.getElementById("body");
-//get values from inputs
-const nameValue = name.value.trim();
-const emailValue = email.value.trim();
-const messageValue = message.value.trim();
-const phoneValue = phone.value.trim();
 
-let nameField;
-let emailField;
-let phoneField;
-let messageField;
+function contactPage() {
+  if (document.body.classList.contains("page-contact")) {
+    const form = document.getElementById("contactForm");
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("body");
+    //get values from inputs
+    const nameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const messageValue = message.value.trim();
+    const phoneValue = phone.value.trim();
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
-  sendForm();
-});
+    let nameField;
+    let emailField;
+    let phoneField;
+    let messageField;
 
-function sendForm() {
-  if (nameField && emailField && phoneField && messageField) {
-    //AJAX ZAPIER
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var phone = $("#phone").val();
-    var body = $("#body").val();
-    var data = {
-      email: email,
-      message: body,
-      phone: phone,
-      contact: name,
-    };
-
-    $.ajax({
-      url: "#",
-      type: "post",
-      data: JSON.stringify(data),
-      success: function () {
-        $(".thanks-message").addClass("show");
-        $(".form-item").hide();
-      },
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      checkInputs();
+      sendForm();
     });
+
+    function sendForm() {
+      if (nameField && emailField && phoneField && messageField) {
+        //AJAX ZAPIER
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var body = $("#body").val();
+        var data = {
+          email: email,
+          message: body,
+          phone: phone,
+          contact: name,
+        };
+
+        $.ajax({
+          url: "#",
+          type: "post",
+          data: JSON.stringify(data),
+          success: function () {
+            $(".thanks-message").addClass("show");
+            $(".form-item").hide();
+          },
+        });
+      }
+    }
+    // console.log(name.value, email.value, body.value);
+    function checkInputs() {
+      //get values from inputs
+      const nameValue = name.value.trim();
+      const emailValue = email.value.trim();
+      const phoneValue = phone.value.trim();
+      const messageValue = message.value.trim();
+
+      //is the field empty
+      if (nameValue === "") {
+        //then add error class
+        setErrorFor(name, "Please add your name");
+      } else {
+        //or add success class
+        setSuccessFor(name);
+        nameField = true;
+      }
+      //repeat for all fields with regex also for email
+      if (emailValue === "") {
+        setErrorFor(email, "Please add your email address");
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, "This is not a valid email address");
+      } else {
+        setSuccessFor(email);
+        emailField = true;
+      }
+      if (phoneValue === "") {
+        setErrorFor(phone, "Please add your phone number");
+      } else {
+        //add success class
+        setSuccessFor(phone);
+        phoneField = true;
+      }
+
+      if (messageValue === "") {
+        setErrorFor(message, "Please add your message");
+      } else {
+        setSuccessFor(message);
+        messageField = true;
+      }
+    }
+
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector("small");
+
+      //add error message inside small
+      small.innerText = message;
+
+      //add error class
+      formControl.className = "form-control error";
+    }
+
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+
+      //add success class
+      formControl.className = "form-control success";
+    }
+    function isEmail(email) {
+      return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      );
+    }
   }
-}
-// console.log(name.value, email.value, body.value);
-function checkInputs() {
-  //get values from inputs
-  const nameValue = name.value.trim();
-  const emailValue = email.value.trim();
-  const phoneValue = phone.value.trim();
-  const messageValue = message.value.trim();
-
-  //is the field empty
-  if (nameValue === "") {
-    //then add error class
-    setErrorFor(name, "Please add your name");
-  } else {
-    //or add success class
-    setSuccessFor(name);
-    nameField = true;
-  }
-  //repeat for all fields with regex also for email
-  if (emailValue === "") {
-    setErrorFor(email, "Please add your email address");
-  } else if (!isEmail(emailValue)) {
-    setErrorFor(email, "This is not a valid email address");
-  } else {
-    setSuccessFor(email);
-    emailField = true;
-  }
-  if (phoneValue === "") {
-    setErrorFor(phone, "Please add your phone number");
-  } else {
-    //add success class
-    setSuccessFor(phone);
-    phoneField = true;
-  }
-
-  if (messageValue === "") {
-    setErrorFor(message, "Please add your message");
-  } else {
-    setSuccessFor(message);
-    messageField = true;
-  }
-}
-
-function setErrorFor(input, message) {
-  const formControl = input.parentElement;
-  const small = formControl.querySelector("small");
-
-  //add error message inside small
-  small.innerText = message;
-
-  //add error class
-  formControl.className = "form-control error";
-}
-
-function setSuccessFor(input) {
-  const formControl = input.parentElement;
-
-  //add success class
-  formControl.className = "form-control success";
-}
-function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
 }

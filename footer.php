@@ -17,7 +17,7 @@
                     Green Man Community Centre<br />
                     Strawberry Vale<br />
                     London N2 9BA<br />
-                    <a class="donate-btn" href="#">Donate</a>
+                    <a class="donate-btn" href="https://cafdonate.cafonline.org/19445#!/DonationDetails">Donate</a>
                 </div>
                 <div class="social">
 

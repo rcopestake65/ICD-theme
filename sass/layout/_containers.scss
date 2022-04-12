@@ -32,11 +32,22 @@
     }
 }
 section {
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
 }
 .two-column-container {
     display: grid;
     grid-template-columns: 1fr 40%;
+    grid-template-rows: auto;
+    gap: 4rem;
+    padding-bottom: 1rem;
+    @include below(700px) {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+}
+.three-column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 4rem;
     padding-bottom: 1rem;
@@ -58,7 +69,19 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     padding: 2rem 0;
-    place-items: center;
+    // place-items: center;
+}
+.quote-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    // padding: 2rem 0;
+    // place-items: center;
+}
+.page-template-children-sub-pages-page .image-container img,
+.page-template-schools-sub-pages-page .image-container img,
+.page-template-learning-sub-pages-page .image-container img {
+    width: 100%;
 }
 .team-container {
     display: grid;
@@ -95,6 +118,47 @@ section {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
+}
+//News Archive
+.posts-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    @include below(1000px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include below(650px) {
+        grid-template-columns: 1fr;
+    }
+}
+.posts-item {
+    background-color: $clr-white;
+    color: $clr-black;
+    box-shadow: var(--shadow-2);
+}
+.posts-item-inner-container {
+    padding: 1rem;
+    a {
+        color: $clr-orange;
+    }
+}
+.links-logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        max-width: 10%;
+    }
+    p {
+        padding-bottom: 0;
+    }
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem 0;
+    gap: 2rem;
 }
 .footer-container {
     height: 100px;

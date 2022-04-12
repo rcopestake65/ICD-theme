@@ -1,60 +1,15 @@
 .img-zoom {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.img-zoom img {
   width: 100%;
   transition: 0.5s all ease-in-out;
 }
 
-.img-zoom:hover {
+.img-zoom:hover img {
   transform: scale(1.1);
-}
-
-/*image hover effect*/
-.hide {
-  display: none !important;
-}
-
-.circles {
-  border-radius: 50%;
-}
-
-/*padding & margin*/
-.pt3 {
-  padding-top: 3rem !important;
-}
-
-.mt1 {
-  margin-top: 1rem;
-}
-
-.mt2 {
-  margin-top: 2rem;
-}
-
-.mt3 {
-  margin-top: 3rem;
-}
-
-/*clear out legay gutenberg cols in homepage*/
-.wp-block-columns {
-  display: none;
-}
-
-/*This comes from  https://avexdesigns.com/blog/responsive-youtube-embed */
-.video {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 30px;
-  height: 0;
-  overflow: hidden;
-}
-
-.video iframe,
-.video object,
-.video embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 /*
@@ -139,6 +94,7 @@ select {
 */
 p {
   padding-bottom: 1rem;
+  font-size: 1.1rem;
 }
 
 a {
@@ -150,9 +106,11 @@ a {
   color: #333333;
   transition: all 0.3s linear;
   border-bottom: 1px solid #ff9029;
+  padding: 0 2px;
 }
 .main-content a:hover {
   background-color: #ff9029;
+  color: white;
 }
 
 .main-content .pullout a {
@@ -189,6 +147,21 @@ h2.handwritten {
   }
 }
 
+h3.handwritten {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+}
+
+h4.handwritten {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+}
+@media (max-width: 550px) {
+  h4.handwritten {
+    font-size: 1.5rem;
+  }
+}
+
 h3 {
   font-weight: bold;
 }
@@ -200,16 +173,18 @@ h3 {
 
 /*gradient text & blockquotes*/
 .quote {
-  background-image: linear-gradient(90deg, #fbb308, #ef2e21);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1.375rem;
+  color: #ff9029;
   font-weight: bold;
-  padding: 0 0 1rem 0;
 }
 .quote p {
-  max-width: 75%;
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  background: #ff9029;
+  background: -webkit-linear-gradient(to right, #ff9029 0%, #ff301a 100%);
+  background: -moz-linear-gradient(to right, #ff9029 0%, #ff301a 100%);
+  background: linear-gradient(to right, #ff9029 0%, #ff301a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 @media (max-width: 800px) {
   .quote p {
@@ -264,6 +239,76 @@ h3 {
   .text-quote div {
     justify-self: center;
   }
+}
+
+/*////////////////UTILITIES \\\\\\\\\\\\\\\*/
+/*image hover effect*/
+.hide {
+  display: none !important;
+}
+
+@media (max-width: 800px) {
+  .small-screen-hide {
+    display: none !important;
+  }
+}
+
+.small-screen-only {
+  display: none;
+}
+@media (max-width: 800px) {
+  .small-screen-only {
+    display: block;
+  }
+}
+
+.circles {
+  border-radius: 50%;
+}
+
+/*padding & margin*/
+.pt2 {
+  padding-top: 2rem;
+}
+
+.pt3 {
+  padding-top: 3rem !important;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.mt2 {
+  margin-top: 2rem;
+}
+
+.mt3 {
+  margin-top: 3rem;
+}
+
+/*clear out legay gutenberg cols in homepage*/
+.wp-block-columns {
+  display: none;
+}
+
+/*This comes from  https://avexdesigns.com/blog/responsive-youtube-embed */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*
@@ -322,7 +367,7 @@ body {
 }
 
 section {
-  padding: 2rem 0;
+  padding: 2rem 0 0 0;
 }
 
 .two-column-container {
@@ -334,6 +379,20 @@ section {
 }
 @media (max-width: 700px) {
   .two-column-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+}
+
+.three-column-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 4rem;
+  padding-bottom: 1rem;
+}
+@media (max-width: 700px) {
+  .three-column-container {
     grid-template-columns: 1fr;
     grid-template-areas: none;
   }
@@ -355,7 +414,18 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   padding: 2rem 0;
-  place-items: center;
+}
+
+.quote-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.page-template-children-sub-pages-page .image-container img,
+.page-template-schools-sub-pages-page .image-container img,
+.page-template-learning-sub-pages-page .image-container img {
+  width: 100%;
 }
 
 .team-container {
@@ -400,6 +470,54 @@ section {
     grid-template-columns: 1fr;
     padding: 1rem;
   }
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .posts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.posts-item {
+  background-color: white;
+  color: black;
+  box-shadow: var(--shadow-2);
+}
+
+.posts-item-inner-container {
+  padding: 1rem;
+}
+.posts-item-inner-container a {
+  color: #ff9029;
+}
+
+.links-logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.links-logo-container img {
+  max-width: 10%;
+}
+.links-logo-container p {
+  padding-bottom: 0;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2rem 0;
+  gap: 2rem;
 }
 
 .footer-container {
@@ -753,14 +871,113 @@ section {
   }
 }
 
-.page-children-young-people {
+.page-our-team,
+.category-news,
+.page-template-performing-page,
+.page-template-impact-page,
+.page-template-policies-page,
+.page-template-press-page,
+.page-template-contact-page {
+  background: url(../img/ribbon-5-light.svg) no-repeat 20% top;
+  background-size: 110%;
+}
+@media (max-width: 800px) {
+  .page-our-team,
+.category-news,
+.page-template-performing-page,
+.page-template-impact-page,
+.page-template-policies-page,
+.page-template-press-page,
+.page-template-contact-page {
+    background: none;
+  }
+}
+
+.page-children-and-young-people {
   background: url(../img/ribbon-4.svg) no-repeat -10% 100px;
   background-size: 50%;
 }
 @media (max-width: 800px) {
-  .page-children-young-people {
+  .page-children-and-young-people {
     background: none;
   }
+}
+
+.page-template-children-sub-pages-page {
+  background: url(../img/ribbon-4-light.svg) no-repeat -10% 100px;
+  background-size: 50%;
+}
+@media (max-width: 800px) {
+  .page-template-children-sub-pages-page {
+    background: none;
+  }
+}
+
+.page-families {
+  background: url(../img/ribbon-2.svg) no-repeat -10% 100px;
+  background-size: 70%;
+}
+@media (max-width: 800px) {
+  .page-families {
+    background: none;
+  }
+}
+
+.page-template-parent-therapy-page,
+.page-community-events {
+  background: url(../img/ribbon-2-light.svg) no-repeat -10% 100px;
+  background-size: 70%;
+}
+@media (max-width: 800px) {
+  .page-template-parent-therapy-page,
+.page-community-events {
+    background: none;
+  }
+}
+
+.page-schools-partners {
+  background: url(../img/ribbon-8.svg) no-repeat -20px 70px;
+  background-size: 110%;
+}
+@media (max-width: 800px) {
+  .page-schools-partners {
+    background: none;
+  }
+}
+
+.page-template-schools-sub-pages-page {
+  background: url(../img/ribbon-8-light.svg) no-repeat -20px 70px;
+  background-size: 110%;
+}
+@media (max-width: 800px) {
+  .page-template-schools-sub-pages-page {
+    background: none;
+  }
+}
+
+.page-learning-training {
+  background: url(../img/ribbon-9.svg) no-repeat 0 20px;
+  background-size: 180%;
+}
+@media (max-width: 800px) {
+  .page-learning-training {
+    background: none;
+  }
+}
+
+.page-template-learning-sub-pages-page {
+  background: url(../img/ribbon-9-light.svg) no-repeat 0 20px;
+  background-size: 180%;
+}
+@media (max-width: 800px) {
+  .page-template-learning-sub-pages-page {
+    background: none;
+  }
+}
+
+.page-support-us {
+  background: url(../img/ribbon-12.svg) no-repeat -50px 200px;
+  background-size: 110%;
 }
 
 /*////////////////HOME PAGE \\\\\\\\\\\\\\\*/
@@ -819,143 +1036,18 @@ section {
   background-color: #ff9029;
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 5px 5px 0px -2px #f57600;
-}
-
-/*////////////////CONTACT PAGE \\\\\\\\\\\\\\\*/
-.form-container sup {
-  color: #ff9029;
-}
-
-.thanks-message {
-  display: none;
-  margin-top: 0 0 0 50px;
-}
-
-.form-control {
-  position: relative;
-}
-
-.form-item i {
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  visibility: hidden;
-}
-
-.form-control small {
-  margin-bottom: 1rem;
-  display: inline-block;
-  visibility: hidden;
-}
-
-.form-control.error small {
-  visibility: visible;
-  color: #e74d3c;
-}
-
-.email-btn {
-  background-color: #000;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.form-item p {
-  color: #000;
-  font-size: 1.5rem;
   margin-top: 2rem;
 }
 
-.email-btn:hover {
-  background-color: #999;
+/*////////////////CONTACT PAGE \\\\\\\\\\\\\\\*/
+.wpforms-container-full {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  background-color: aqua;
 }
 
-.email-btn a {
-  color: #fff;
-  display: block;
-  padding: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.email-btn a:hover {
-  color: #000;
-}
-
-form {
-  max-width: 100%;
-  margin: 0;
-}
-
-.feedback-input {
-  font-size: 1.125rem;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border: 2px solid #ededed;
-  transition: all 0.3s;
-  padding: 13px;
-  /* margin-bottom: 15px; */
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
-  background: #ededed;
-}
-
-.feedback-input:focus {
-  border: 2px solid #ff9029;
-}
-
-.form-control.success input {
-  border-color: #23cd72;
-}
-
-.form-control.error input {
-  border-color: #e74d3c;
-}
-
-.form-control.success textarea {
-  border-color: #23cd72;
-}
-
-.form-control.error textarea {
-  border-color: #e74d3c;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #23cd72;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74d3c;
-  visibility: visible;
-}
-
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize: vertical;
-  font-family: inherit;
-}
-
-[type=submit] {
-  width: 30%;
-  background: #ff9029;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  color: white;
-  font-size: 1.125rem;
-  padding: 10px 0;
-  transition: all 0.3s;
-}
-@media (max-width: 600px) {
-  [type=submit] {
-    width: 80%;
-  }
-}
-[type=submit]:hover {
-  background-color: #f57600;
+.form-container sup {
+  color: #ff9029;
 }
 
 /*adress column*/
@@ -1020,6 +1112,27 @@ textarea {
   padding: 1rem;
 }
 
+/*////////////////ARCHIVE & SINGLE POST PAGE \\\\\\\\\\\\\\\*/
+.main-content .post-img-link {
+  border: none;
+  padding: 0;
+}
+
+.single-post .img-zoom img {
+  max-width: 30%;
+}
+
+/*////////////////POLICIES PAGE \\\\\\\\\\\\\\\*/
+.policy {
+  background-color: #ff9029;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.policy h3 {
+  color: white;
+  padding-bottom: 1rem;
+}
+
 /*///////////////////Buttons\\\\\\\\\\\\\\\\\\\\\*/
 /*icons*/
 button {
@@ -1076,6 +1189,11 @@ button:hover .fa-arrow-right {
   box-shadow: 5px 5px 0px -2px #f57600;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer-container .donate-btn {
   display: inline-block;
   background-color: #ff9029;
@@ -1092,6 +1210,64 @@ button:hover .fa-arrow-right {
   text-decoration: none;
   -webkit-box-shadow: 5px 5px 0px -2px #ffffff;
   box-shadow: 5px 5px 0px -2px #ffffff;
+}
+
+.policy .download-btn {
+  background-color: #f57600;
+  padding: 5px 10px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.policy .download-btn:hover {
+  background-color: #ffcd05;
+  color: #f57600;
+  -webkit-box-shadow: 5px 5px 0px -2px #f57600;
+  box-shadow: 5px 5px 0px -2px #f57600;
+}
+
+.submit {
+  background-color: #ff9029;
+  padding: 5px 10px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  transition: 300ms;
+}
+.submit:hover {
+  background-color: #ffcd05;
+  color: #f57600;
+  -webkit-box-shadow: 5px 5px 0px -2px #f57600;
+  box-shadow: 5px 5px 0px -2px #f57600;
+}
+
+/*///////////////////Statistics 'bubbles'\\\\\\\\\\\\\\\\\\\\\*/
+.stats-item {
+  background-color: #ff9029;
+  background-image: url(../img/ribbon-5.svg);
+  background-repeat: no-repeat;
+  background-blend-mode: screen;
+  background-size: 110%;
+  background-position-x: 15%;
+  border-radius: 5px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.stats-item h3 {
+  color: white;
+}
+.stats-item h4 {
+  font-size: 3.75rem;
+  color: #ff9029;
+  padding: 1rem;
+  border-radius: 25px 0;
+  background-color: white;
+  outline: 5px solid #ffcd05;
 }
 
 /*# sourceMappingURL=style.css.map */

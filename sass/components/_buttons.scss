@@ -53,6 +53,10 @@ button {
         box-shadow: 5px 5px 0px -2px $clr-orange-dark;
     }
 }
+.pagination {
+    display: flex;
+    justify-content: space-between;
+}
 .footer-container .donate-btn {
     display: inline-block;
     background-color: $clr-orange;
@@ -68,5 +72,35 @@ button {
         text-decoration: none;
         -webkit-box-shadow: 5px 5px 0px -2px #ffffff;
         box-shadow: 5px 5px 0px -2px #ffffff;
+    }
+}
+.policy .download-btn {
+    background-color: $clr-orange-dark;
+    padding: 5px 10px;
+    color: white;
+    font-size: $fs-14;
+    font-weight: bold;
+    border-radius: 3px;
+    &:hover {
+        background-color: $clr-yellow;
+        color: $clr-orange-dark;
+        -webkit-box-shadow: 5px 5px 0px -2px $clr-orange-dark;
+        box-shadow: 5px 5px 0px -2px $clr-orange-dark;
+    }
+}
+.submit {
+    background-color: $clr-orange;
+    padding: 5px 10px;
+    color: white;
+    font-size: $fs-14;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    transition: 300ms;
+    &:hover {
+        background-color: $clr-yellow;
+        color: $clr-orange-dark;
+        -webkit-box-shadow: 5px 5px 0px -2px $clr-orange-dark;
+        box-shadow: 5px 5px 0px -2px $clr-orange-dark;
     }
 }

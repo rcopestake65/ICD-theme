@@ -32,37 +32,6 @@ endif;
 ?>
 </div>
 
-<?php the_field('text_two'); ?>
-
-<?php
-if( have_rows('image_grid_two') ): ?>
-<div class="image-container">
-    <?php  
-
-while ( have_rows('image_grid_two') ) : the_row(); 
-        $image = get_sub_field('image');
-        ?>
-
-    <div class="image-grid-two-item-<?php echo get_row_index(); ?>">
-        <img class="circles" alt="dancers" src="<?php echo $image['url']; ?>" />
-    </div>
-
-    <?php
-endwhile;
-else :
-endif;
-?>
-</div>
-<div class="video-container">
-    <div class="video">
-        <?php the_field('video_one'); ?>
-
-    </div>
-    <div class="video">
-
-        <?php the_field('video_two'); ?>
-    </div>
-</div>
 
 
 

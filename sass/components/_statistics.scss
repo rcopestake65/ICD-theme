@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+/*///////////////////Statistics 'bubbles'\\\\\\\\\\\\\\\\\\\\\*/
+.stats-item {
+    background-color: #ff9029;
+    background-image: url(../img/ribbon-5.svg);
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-size: 110%;
+    background-position-x: 15%;
+
+    border-radius: 5px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    h3 {
+        color: $clr-white;
+    }
+    h4 {
+        font-size: $fs-60;
+        color: $clr-orange;
+        padding: 1rem;
+        border-radius: 25px 0;
+        background-color: $clr-white;
+        outline: 5px solid $clr-yellow;
+    }
+}

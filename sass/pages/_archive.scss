@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////ARCHIVE & SINGLE POST PAGE \\\\\\\\\\\\\\\*/
+
+.main-content .post-img-link {
+    border: none;
+    padding: 0;
+}
+.single-post .img-zoom img {
+    max-width: 30%;
+}

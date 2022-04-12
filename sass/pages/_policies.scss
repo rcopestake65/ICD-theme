@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+@use "../base" as *;
+/*////////////////POLICIES PAGE \\\\\\\\\\\\\\\*/
+
+.policy {
+    background-color: $clr-orange;
+    padding: 1rem;
+    border-radius: 8px;
+    h3 {
+        color: $clr-white;
+        padding-bottom: 1rem;
+    }
+}

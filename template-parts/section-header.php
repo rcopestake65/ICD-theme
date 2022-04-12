@@ -10,7 +10,7 @@
             </div>
             <div class="social">
 
-                <a class="donate-btn" href="#">Donate</a>
+                <a class="donate-btn" href="https://cafdonate.cafonline.org/19445#!/DonationDetails">Donate</a>
                 <a class="social-icon" href="https://www.facebook.com/icandanceuk/"><i
                         class="fab fa-facebook fa-lg"></i></a>
                 <a class="social-icon" href="https://www.instagram.com/icandanceuk/"><i

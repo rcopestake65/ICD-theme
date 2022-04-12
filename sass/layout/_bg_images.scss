@@ -16,10 +16,78 @@
         background: none;
     }
 }
-.page-children-young-people {
+.page-our-team,
+.category-news,
+.page-template-performing-page,
+.page-template-impact-page,
+.page-template-policies-page,
+.page-template-press-page,
+.page-template-contact-page {
+    background: url(../img/ribbon-5-light.svg) no-repeat 20% top;
+    background-size: 110%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-children-and-young-people {
     background: url(../img/ribbon-4.svg) no-repeat -10% 100px;
     background-size: 50%;
     @include below(800px) {
         background: none;
     }
+}
+
+.page-template-children-sub-pages-page {
+    background: url(../img/ribbon-4-light.svg) no-repeat -10% 100px;
+    background-size: 50%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-families {
+    background: url(../img/ribbon-2.svg) no-repeat -10% 100px;
+    background-size: 70%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-template-parent-therapy-page,
+.page-community-events {
+    background: url(../img/ribbon-2-light.svg) no-repeat -10% 100px;
+    background-size: 70%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-schools-partners {
+    background: url(../img/ribbon-8.svg) no-repeat -20px 70px;
+    background-size: 110%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-template-schools-sub-pages-page {
+    background: url(../img/ribbon-8-light.svg) no-repeat -20px 70px;
+    background-size: 110%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-learning-training {
+    background: url(../img/ribbon-9.svg) no-repeat 0 20px;
+    background-size: 180%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-template-learning-sub-pages-page {
+    background: url(../img/ribbon-9-light.svg) no-repeat 0 20px;
+    background-size: 180%;
+    @include below(800px) {
+        background: none;
+    }
+}
+.page-support-us {
+    background: url(../img/ribbon-12.svg) no-repeat -50px 200px;
+    background-size: 110%;
 }
